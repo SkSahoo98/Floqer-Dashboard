@@ -1,0 +1,130 @@
+// Variables for table styling
+$table-header-bg: #001529;
+$table-header-color: #ffffff;
+$table-row-hover-bg: #aaddf5;
+$table-border-color: #d9d9d9;
+
+// Main table styling
+.ant-table {
+  backdrop-filter: blur(10px); 
+  background: radial-gradient(
+    #2b2b2b49,
+    rgba(128, 128, 128, 0.202)
+  ); 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  padding: 20px; 
+  overflow: hidden;
+  color: white; 
+
+  // Header styling
+  .ant-table-thead > tr > th {
+    background-color: $table-header-bg;
+    color: $table-header-color;
+    font-weight: bold;
+    text-align: center; 
+    padding: 12px 8px;
+    border-bottom: 2px solid $table-border-color; 
+
+    &:hover {
+      color: black; 
+    }
+  }
+
+  // Row styling
+  .ant-table-row {
+    background-color: #2b2b2b;
+    color: white;
+  }
+  // Sorted column styles
+  .ant-table-column-sort {
+    background-color: #2b2b2b !important; 
+    color: white !important; 
+  }
+
+  // Styling for alternate rows
+  .ant-table-row:nth-child(even) {
+    background-color: #333333;
+  }
+
+  // Row hover effect
+  .ant-table-row:hover {
+    background-color: $table-row-hover-bg !important;
+    color: rgb(0, 0, 0); 
+  }
+
+  // Styling for table cells (td)
+  .ant-table-tbody > tr > td {
+    border-bottom: 1px solid $table-border-color;
+    text-align: center; 
+    padding: 10px 8px; 
+  }
+
+  // Pagination styling
+  .ant-pagination {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+// Container for tables
+.table-container {
+  margin: auto;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  gap: 20px; 
+
+  // Adjust when one table is hidden
+  &.table-hidden {
+    justify-content: center;
+
+    .table {
+      width: 100%; 
+    }
+  }
+
+  // Adjust when both tables are shown
+  &.table-shown {
+    .table {
+      width: 48%; 
+    }
+  }
+
+  // Responsive behavior for smaller screens
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+
+    &.table-shown .table {
+      width: 90%; 
+    }
+  }
+}
+
+// Individual table styling
+.table {
+  max-width: 100%; 
+  padding: 20px;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px); 
+  background: radial-gradient(
+    #2b2b2b49,
+    rgba(128, 128, 128, 0.202)
+  ); 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+
+  @media (max-width: 768px) {
+    width: 90%; 
+  }
+}
+
+// Title styling for the tables
+h1 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: white;
+}
